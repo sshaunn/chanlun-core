@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+application:
+  api_version: latest
+  name: chanlun-core
+  days_window: 5
+  strategy:
+    - kdj
+    - macd
+    - rsi
+    - boll
+    - ema
+    - combined
+  cache:
+    expire: 86400
