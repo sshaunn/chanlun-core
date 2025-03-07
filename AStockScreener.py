@@ -178,6 +178,7 @@ class AStockScreener:
         self.stock_data = {}
         self.filtered_stocks = []
 
+    # TODO 增加cache 避免频繁调用接口
     def get_all_stocks(self):
         """获取所有A股的股票代码和名称"""
         print("正在获取所有A股股票列表...")
@@ -371,6 +372,7 @@ class AStockScreener:
         # 返回排序后的股票代码
         return [code for code, _ in weighted_stocks]
 
+    # TODO 配置strategy days_ago, 加入服务器框架时可灵活调用
     def run_screening(self, max_stocks=None, strategy='macd', days_ago=5):
         """运行完整的筛选流程"""
         # 获取所有股票
@@ -387,6 +389,7 @@ class AStockScreener:
             self.filtered_stocks = self.screen_macd_golden_cross(days_ago)
         elif strategy == 'rsi':
             self.filtered_stocks = self.screen_rsi_oversold_bounce(days_ago)
+        # TODO 增加 布林带 ema 筛选算法
         # elif strategy == 'boll':
         #     self.filtered_stocks = self.screen_boll_breakout(days_ago)
         # elif strategy == 'ema':
