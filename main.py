@@ -1,5 +1,6 @@
-from AStockScreener import AStockScreener, calculate_indicators, get_stock_data
+from AStockScreener import AStockScreener
 
+# TODO 后期加入flask服务器框架
 # 使用示例
 if __name__ == "__main__":
     screener = AStockScreener()
