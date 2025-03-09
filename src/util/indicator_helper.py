@@ -1,9 +1,8 @@
 import traceback
-import akshare as ak
+
 import pandas as pd
 
 from src.indicator.RSICalculator import RSICalculator
-
 
 
 def calculate_indicators(data, rsi_parameters=None):
